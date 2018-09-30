@@ -1,7 +1,12 @@
 <?php
-
 $message = $_POST['message'];
-$to = $_POST['to'];
+if(isset($_POST['to'])){
+	$to = $_POST['to'];
+}
+$bcc = $_POST['bcc'];
+$cc = $_POST['cc'];
+$bccArray= explode(" ", $bcc);
+$ccArray= explode(" ", $cc);
 $subject = $_POST['subject'];
 require 'src/PHPMailer.php';
 require 'src/SMTP.php';
@@ -22,14 +27,21 @@ try {
     $mail->Port = 465;                                    // TCP port to connect to
 
     //Recipients
-    $mail->setFrom($to);
-    $mail->addAddress($to);
+    $mail->setFrom('rishabhrathi75@gmail.com');
+    if($to!=null)
+    	$mail->addAddress($to);
     //$mail->addAddress('joe@example.net');     // Add a recipient
     //$mail->addAddress('ellen@example.com');               // Name is optional
     //$mail->addReplyTo('info@example.com', 'Information');
-    $mail->addCC('cc@example.com');
-    $mail->addBCC('bcc@example.com');
-
+    if($bcc!=null){
+	    for ($i=0; $i < sizeof($bccArray); $i++) { 
+	    	$mail->addBCC($bccArray[$i]);
+	    }
+	}
+	if($cc!=null){
+    for ($i=0; $i < sizeof($ccArray); $i++) { 
+    	$mail->addCC($ccArray[$i]);
+    }}
     //Attachments
     //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
     //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name

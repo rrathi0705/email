@@ -30,24 +30,25 @@ p.small {
 .email-box {
 	background-color: #ff5;
 	padding-bottom: 15px;
-	border-radius: 15px;
-	text-align: center !important;
-    float: right; 
+	border-radius: 15px; 
+    width: 50%;
+    margin-left: 25%;
     margin-top: 2%;
-    margin-right: 10%;
     margin-bottom:1%;
 }
 .email-box .box-header {
-	background-color: #fff;
+	background-color: blue;
 	margin-top: 0;
+	text-align: center;
 	border-radius: 7px 7px 0 0;
 }
 
 .email-box label {
 	font-weight: 700;
-	font-size: .8em;
+	margin-left: 10%;
+	font-size: 1.4rem;
 	color: #004d99;
-	letter-spacing: 1.4px;
+	letter-spacing: 1px;
 	text-transform: uppercase;
 	line-height: 2em;
 }
@@ -55,13 +56,13 @@ p.small {
 .email-box input {
 	margin-bottom: 10px;
 	padding: 8px;
+	width: 95%;
 	border: 1px solid #b3d9ff;
 	border-radius: 4px;
 	font-size: 1em;
 	color: #3399ff;
 }
 .email-box button {
-	margin-top: 0px;
 	border: 0;
 	border-radius: 3px;
 	color: #fff;
@@ -69,15 +70,19 @@ p.small {
 	text-transform: uppercase;
 	font-weight: 700;
 	font-size: 0.7em;
+	margin-left: 10%;
 	letter-spacing: 1px;
+	width: 150px;
 	background-color: #0073e6;
 	cursor: pointer;
 	outline: none;
 }
-.email-box input[type=textarea]{
-	height: 60px;
-	width: 90%;
+textarea{
+	height: 150px;
+	width: 95%;
 	color: #3399ff;
+	border-radius: 3px;
+	outline: none;
 }
 .email-box input:focus {
 	outline: none;
